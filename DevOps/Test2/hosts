@@ -1,0 +1,34 @@
+  [production-east]
+  192.168.1.101
+  192.168.1.102
+  192.168.1.103
+
+  [production-east:vars]
+  ansible_user= root
+  ansible-password=PurpleMountain
+
+  [production-west]
+  192.168.2.101
+  192.168.2.102
+  192.168.2.103
+
+  [production-west:var]
+  anisble_user= root
+  anisble_password=PurpleMountain
+
+  [production-north]
+  192.168.3.10.1
+
+  [producton-north:var]
+  ansible_user=root
+  ansible_password=PurpleMountain
+
+# add another host group for production-south with a single host with an ip address of 192.168.200.4
+# make sure to include the variables for this group too
+
+  [production-south]
+  192.168.200.4
+
+  [production-south:vars]
+  ansible_user=root
+  ansible_password=PurpleMountain

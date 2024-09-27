@@ -1,0 +1,3 @@
+* * * * * ansible-playbook /home/amkitchen42/ansible-playbooks/prod-apache-nodejs-git-install.yml
+* * * * * ansible-playbook /home/amkitchen42/ansible-playbooks/prod-mariadb-install.yml
+0 1 * * * ansible-playbook /home/amkitchen42/ansible-playbooks/prod-github-clone.yml

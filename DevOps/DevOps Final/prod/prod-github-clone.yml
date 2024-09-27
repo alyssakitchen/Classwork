@@ -1,0 +1,13 @@
+---
+  - name: Clone repo
+    hosts: prodwebservers
+    tasks:
+      - name: delete path
+        file:
+          state: absent
+          path: /var/www/html
+      - name: Clone Git Repository
+        git:
+          repo: https://github.com/ttu-bburchfield/swollenhippofinal.git
+          dest: "/var/www/html"
+          version: "test"

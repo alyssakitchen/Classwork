@@ -1,0 +1,8 @@
+---
+  - name: Install MariaDB
+    hosts: 10.128.0.11
+    tasks:
+      - name: Install MariaDB
+        yum:
+          name: mariadb-server
+          state: present

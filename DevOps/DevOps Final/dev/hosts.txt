@@ -1,0 +1,8 @@
+# Grouped Webserver Hosts
+  [devwebservers]
+  10.128.0.11
+  10.142.0.5
+
+  [devwebservers:vars]
+  ansible_user=root
+  ansible_password=Mickey2023!

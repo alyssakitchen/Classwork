@@ -1,0 +1,99 @@
+Create a playbook with Ansible that creates a new directory at /var/www/html/SwollenHippo
+using Ansible on all web servers:
+---
+  - name: Create Directory
+    hosts: webserverdev
+    tasks:
+      - name: Create Directory
+        file:
+          path: /var/www/html/SwollenHippo
+          state: directory
+
+  - name: Create Directory2
+    hosts: webserverprod
+    tasks:
+      - name: Create Directory
+        file:
+          path: /var/www/html/SwollenHippo
+          state: directory
+
+Create Playbook to Install nodeJS and Install npm:
+---
+  - name: Install nodeJS (dev)
+    hosts: webserverdev
+    tasks:
+      - name: Install nodeJS
+        apt:
+          name: nodejs
+          state: latest
+
+  - name: Install nodeJS (prod)
+    hosts: webserverprod
+    tasks:
+      - name: Install nodeJS
+        apt:
+          name: nodejs
+          state: latest
+
+  - name: Install npm (dev)
+    hosts: webserverdev
+    tasks:
+      - name: Install npm
+        apt:
+          name: npm
+          state: latest
+
+  - name: Install npm (prod)
+    hosts: webserverprod
+    tasks:
+      - name: Install npm
+        apt:
+          name: npm
+          state: latest
+		  
+Create a Playbook to create directories /usr/local/SharedFiles, /usr/local/Accounting,
+and /usr/local/HR on the file servers. In addition to the previous parts of the playbook
+for the file servers, use the copy module to create /usr/local/SharedFiles/directory.json,
+/usr/local/Accounting/payroll.csv, /usr/local/Accounting/deductions.csv, and
+/usr/local/HR/contacts.json in those directories:
+---
+  - name: Create Directories
+    hosts: fileservers
+    tasks:
+      - name: Create Shared Files Directory
+        file:
+          path: /usr/local/SharedFiles
+          state: directory
+
+      - name: Create Accounting Directory
+        file:
+          path: /usr/local/Accounting
+          state: directory
+
+      - name: Create HR Directory
+        file:
+          path: /usr/local/HR
+          state: directory
+
+  - name: Create Files
+    hosts: fileservers
+    tasks:
+      - name: Create directory.json
+        copy:
+          content: ""
+          dest: /usr/local/SharedFiles/directory.json
+
+      - name: Create payroll.csv
+        copy:
+          content: ""
+          dest: /usr/local/Accounting/payroll.csv
+
+      - name: Create deductions.csv
+        copy:
+          content: ""
+          dest: /usr/local/Accounting/deductions.csv
+
+      - name: Create contacts.json
+        copy:
+          content: ""
+          dest: /usr/local/HR/contacts.json

@@ -1,0 +1,3 @@
+* * * * * ansible-playbook /home/amkitchen42/ansible-playbooks/dev-apache-nodejs-git-install.yml
+* * * * * ansible-playbook /home/amkitchen42/ansible-playbooks/dev-mariadb-install.yml
+0 1 * * * ansible-playbook /home/amkitchen42/ansible-playbooks/dev-github-clone.yml

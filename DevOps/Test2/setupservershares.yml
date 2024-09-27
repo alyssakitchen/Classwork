@@ -1,0 +1,29 @@
+---
+# You may NOT use generative on this portion of the exam
+# Please correct this playbook.  There are many issues that the
+# contracted giraffe added, and some sections missing information
+# HINT:  There is information in the instructions on Teams that is VERY
+# important to an error in this playbook
+  - name: Create pirates.xls file
+    hosts: production-east production-west
+    tasks:
+      - name: Ensure Git is installed, if it is installed, it should not be upgraded
+        apt:
+          name: git
+          state: latest
+
+      - name: Ensure jq is up-to-date with the most recent version
+        apt:
+          name: jq
+          state: latest
+
+      - title: Ensure /usr/local/accounting directory exists and only the owner and the owner group has full access to it, no other users have any access
+        file:
+          path: /usr/local/accounting
+          state: directory
+          mode: 0770
+
+      - title: Create pirates.xls file
+        copy:
+          content: ""
+          dest: /usr/local/accounting/pirates.xls

@@ -1,0 +1,8 @@
+# Grouped Prod Webservers
+  [prodwebservers]
+  10.128.0.12
+  10.128.0.14
+
+  [prodwebservers:vars]
+  ansible_user=root
+  ansible_password=Mickey2023!

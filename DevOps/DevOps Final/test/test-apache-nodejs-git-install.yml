@@ -1,0 +1,12 @@
+---
+  - name: Install Apache and NodeJS
+    hosts: testwebservers
+    tasks:
+      - name: Install Apache
+        yum:
+          name: apache2
+          state: present
+      - name: Install NodeJS
+        yum:
+          name: nodejs
+          state: present
