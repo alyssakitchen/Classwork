@@ -1,0 +1,20 @@
+a. Given an input list and a target element, output the index of the third occurence
+of that element in the list. If there are not three occurences, display a message.
+
+//INPUT: inputList = [4, 8, 1, 1, 5, 3, 0, 5, 9, 0, 2, 0, 0, 3, 5]
+//OUTPUT: index of third occurence of 0
+
+STEP 1 currentIndex <- 0
+STEP 2 occurence <- 0
+STEP 3 targetElement <- 0
+STEP 4 while currentIndex < 13 do
+	if inputList[currentIndex] = targetElement do
+		occurence <- occurence + 1
+	if occurence = 3 do	
+		display currentIndex
+		occurence <- occurence + 1
+	currentIndex <- currentIndex +1
+STEP 5 if occurence != 3 do
+	display "There are not 3 occurences of 0 in the list."
+
+STEP 6 return 0
